@@ -1,11 +1,11 @@
 "use client";
-
+import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
-
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState("");
+
   const handleClick = () => {
     setShow(!show);
   };
@@ -17,7 +17,11 @@ const Navbar = () => {
           <span className="searchFieldIcon">
             <CiSearch size={24} />
           </span>
-          <input type="text" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </span>
         <span className={`${show ? "show" : "menu"}`}>
           <li>Categories</li>
@@ -25,12 +29,9 @@ const Navbar = () => {
           <li>Today's deals</li>
         </span>
 
-
-
         <span className="btn" onClick={handleClick}>
           {show ? "Close" : "Menu"}
         </span>
-
       </div>
     </nav>
   );

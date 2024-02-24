@@ -14,13 +14,15 @@ const LinkRouter = () => {
 
   return (
     <div className={style.links}>
-        {links.map((link, index) => (
-            
-            <Link href={`/${link.toLowerCase()}`}  key={index} className={style.link}>
-              {link}
-              {index < links.length - 1 ? " > " : null}
-            </Link>
-        ))}
+      {links.map((link, index) => (
+        <Link
+          href={`/${link.toLowerCase()}`}
+          key={index}
+          className={style.link}>
+          {link}
+          {index < links.length - 1 ? " > " : null}
+        </Link>
+      ))}
     </div>
   );
 };

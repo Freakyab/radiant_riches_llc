@@ -6,8 +6,10 @@
   width: 100%;
   background: #ffffff;
   line-height: 2.5;
+
   .leftSection {
     display: flex;
+    flex: 2;
     width: 400px;
     flex-direction: column;
     height: 100%;
@@ -22,7 +24,7 @@
       gap: 0.2rem;
       font-weight: 100;
       background: #ff7724;
-      width: 60%;
+      width: 200px;
       border-radius: 0 10px 10px 0;
       color: #ffffff;
     }
@@ -42,12 +44,15 @@
       background: #ffffff;
     }
     .image {
-      padding: 1.5rem;
-      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // padding: 1.5rem;
+      object-fit: contain;
+      width: 100%;
       height: 150px;
     }
     .imageLabel {
-      position: relative;
       display: flex;
       justify-content: center;
       font-size: small;
@@ -58,6 +63,7 @@
   .centerSection {
     display: flex;
     flex-direction: column;
+    flex: 3;
     padding: 20px 0 10px 0;
     .title {
       color: #4b5665;
@@ -67,10 +73,10 @@
       }
     }
 
-    .off{
+    .off {
       color: #074786;
       font-size: 1rem;
-      background-color: #F2F4F7;
+      background-color: #f2f4f7;
       width: fit-content;
       font-weight: 500;
       padding: 0 5px;
@@ -105,11 +111,10 @@
       font-size: small;
     }
 
-    .checkBox{
+    .checkBox {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-
     }
     .checkTitle {
       font-size: 0.8rem;
@@ -127,6 +132,7 @@
   .rightSection {
     display: flex;
     flex-direction: column;
+    // flex: 1;
     justify-content: space-between;
     align-items: center;
     padding: 0 0.2rem 0 0;
@@ -134,7 +140,8 @@
     .rating {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-content: center;
+      // justify-content: center;
       background: #f3f9ff;
       border-radius: 0 0 10px 10px;
       height: 120px;
@@ -147,15 +154,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 130px;
-        padding: 0 0 10px 0;
+
+        // width: 100%;
+        padding: 2px;
 
         .infoIcon {
           width: 10px;
           height: 10px;
           position: relative;
           top: 0;
-          left: 20px;
+          left: 30px;
           color: #babec3;
         }
         .ratingValue {
@@ -167,6 +175,8 @@
       .ratingStars {
         display: flex;
         justify-content: center;
+        height: 100%;
+        align-items: center;
         .star {
           width: 10px;
           height: 10px;
@@ -179,6 +189,7 @@
       height: 40px;
       border: none;
       color: white;
+      cursor: pointer;
       background: #1b88f4;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -186,8 +197,7 @@
   }
 }
 
-
-@media screen and (max-width:1024px){
+@media screen and (max-width: 1024px) {
   .card {
     flex-direction: column;
     padding: 10px;
@@ -210,7 +220,7 @@
       .title {
         font-size: 1.2rem;
       }
-      .off{
+      .off {
         font-size: 1.2rem;
       }
       .highlight {
@@ -220,8 +230,6 @@
         font-size: 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
       }
       .desc {
         font-size: 1rem;
@@ -231,7 +239,7 @@
       .rating {
         height: 100px;
         width: 100%;
-        
+
         .ratingDetails {
           margin-left: auto;
           margin-right: auto;
@@ -239,7 +247,6 @@
           .ratingValue {
             font-size: 1.2rem;
           }
-        
         }
       }
       .button {
@@ -247,5 +254,4 @@
       }
     }
   }
-  
 }

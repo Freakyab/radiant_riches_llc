@@ -1,23 +1,23 @@
 .links {
   display: flex;
-  width: 70%;
+  width: fit-content;
   align-content: flex-start;
   justify-content: space-between;
   list-style: none;
   color: #5c6874;
 
-  .link{
+  .link {
     display: flex;
+    width: fit-content;
+    padding: 10px;
     text-decoration: none;
     white-space: nowrap;
     color: #5c6874;
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .links {
     display: none;
-
   }
-  
 }

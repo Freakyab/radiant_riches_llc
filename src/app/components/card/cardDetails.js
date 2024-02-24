@@ -7,6 +7,7 @@ const cardDetails = [
     image: "/images/cardImage.png",
     rating: 9.8,
     reviewTitle: "Exceptional",
+    imageLabel: "Builder 1",
     ratingStars: 5,
     rank: 1,
   },
@@ -18,6 +19,7 @@ const cardDetails = [
     image: "/images/cardImage.png",
     rating: 9.5,
     reviewTitle: "Excellent",
+    imageLabel: "Builder 1",
     ratingStars: 4,
     rank: 2,
   },
@@ -29,6 +31,7 @@ const cardDetails = [
     image: "/images/cardImage.png",
     rating: 9.3,
     reviewTitle: "Exceptional",
+    imageLabel: "Builder 1",
     ratingStars: 5,
     rank: 3,
   },
@@ -37,7 +40,7 @@ const cardDetails = [
     context:
       "An extensive library of widgets and apps, and detailed step-by-step guides",
     highlights: true,
-    off : 26,
+    off: 26,
     timeStamps: [
       {
         time: "9.9",
@@ -52,27 +55,27 @@ const cardDetails = [
         title: "Docs",
       },
     ],
-    desc : "Why we love it",
-    checkBox : [
-      {
-        title : "Documentation",
-        checked : true,
-      },
-      {
-        title : "Easy to use",
-        checked : true,
-      },
-      {
-        title : "Out of the box ",
-        checked : true,
-      },
-    
-    ],
+    desc: "Why we love it",
     image: "/images/cardImage.png",
     rating: 9.3,
     reviewTitle: "Exceptional",
+    imageLabel: "CDK",
     ratingStars: 5,
     rank: 4,
+    checkBox: [
+      {
+        title: "Documentation",
+        checked: true,
+      },
+      {
+        title: "Easy to use",
+        checked: true,
+      },
+      {
+        title: "Out of the box ",
+        checked: true,
+      },
+    ],
   },
 ];
 

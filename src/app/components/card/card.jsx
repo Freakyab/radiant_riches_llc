@@ -1,3 +1,4 @@
+"use client";
 import styles from "./card.module.scss";
 import CardDetails from "./cardDetails";
 import { CiCircleInfo, CiTrophy } from "react-icons/ci";
@@ -6,6 +7,10 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import Image from "next/image";
 
 const Card = () => {
+  const handleSumbit = () => {
+    alert("Coming soon!");
+  };
+
   return (
     <>
       {CardDetails.map((card, index) => {
@@ -23,17 +28,15 @@ const Card = () => {
                   <span>Best Value</span>
                 </span>
               ) : null}
-
               <p className={styles.rank}>{card.rank}</p>
-
               <Image
                 src={card.image}
                 alt={card.title}
-                width={500}
-                height={500}
+                width={700}
+                height={700}
                 className={styles.image}
               />
-              <p className={styles.imageLabel}>Builder 1</p>
+              <p className={styles.imageLabel}>{card.imageLabel}</p>
             </div>
             <div className={styles.centerSection}>
               <h3 className={styles.title}>
@@ -62,26 +65,27 @@ const Card = () => {
                 ? card.checkBox.map((check, index) => {
                     return (
                       <div key={index} className={styles.checkBox}>
-                       <Image 
-                        src="/images/checkbox.png"
-                        alt="check"
-                        width={20}
-                        height={20}
-                        className={styles.checkImage}
+                        <Image
+                          src="/images/checkbox.png"
+                          alt="check"
+                          width={20}
+                          height={20}
+                          className={styles.checkImage}
                         />
                         <span className={styles.checkTitle}>{check.title}</span>
                       </div>
                     );
                   })
                 : null}
-              <span className={styles.showmore}>Show more
-              <RiArrowDropDownLine size={20} />
-               </span>
+              <span className={styles.showmore} onClick={handleSumbit}>
+                Show more
+                <RiArrowDropDownLine size={20} />
+              </span>
             </div>
             <div className={styles.rightSection}>
               <div className={styles.rating}>
                 <span className={styles.ratingDetails}>
-                  <CiCircleInfo className={styles.infoIcon} />
+                  <CiCircleInfo className={styles.infoIcon} title="Info" />
                   <p className={styles.ratingValue}>{card.rating}</p>
                   <p className={styles.ratingTitle}>{card.reviewTitle}</p>
                 </span>
@@ -102,7 +106,9 @@ const Card = () => {
                     ))}
                 </div>
               </div>
-              <button className={styles.button}>View</button>
+              <button className={styles.button} onClick={handleSumbit}>
+                View
+              </button>
             </div>
           </div>
         );

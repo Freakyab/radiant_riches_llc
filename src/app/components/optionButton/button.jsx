@@ -13,7 +13,6 @@ const OptionButton = () => {
       })}
     </div>
   );
-}
-
+};
 
 export default OptionButton;

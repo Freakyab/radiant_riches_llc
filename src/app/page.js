@@ -25,7 +25,7 @@ export default function Home() {
               </span>
               <span className={styles.detailIcon}> - February 22, 2020</span>
               <span className={styles.detailIcon}>
-                <CiCircleInfo size={20} />
+                <CiCircleInfo size={20} title="Info" />
                 Advertising Disclosure
               </span>
             </div>

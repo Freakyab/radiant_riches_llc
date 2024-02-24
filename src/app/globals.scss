@@ -6,7 +6,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #fbfcfd;
 }
 
 nav {
@@ -21,7 +20,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Adjusted to space-between */
-    width: 50%;
+    width: 90%;
 
     .searchField {
       position: relative;
@@ -31,12 +30,13 @@ nav {
 
       .searchFieldIcon {
         position: relative;
+        background: white;
         left: 12%;
         margin-right: auto;
       }
 
       input {
-        padding: 0.5rem;
+        padding-left: 4rem;
         height: 37px;
         border-radius: 8px;
         width: 258px;
@@ -59,6 +59,7 @@ nav {
       justify-content: space-evenly; /* Adjusted to center */
       background-color: #212731;
       width: 100%;
+      cursor: pointer;
       // padding: 1rem;
 
       li {
@@ -74,6 +75,7 @@ nav {
       display: flex;
       flex-direction: column;
       position: absolute;
+      cursor: pointer;
       top: 64px;
       right: 0;
       background-color: #212731;
@@ -95,22 +97,10 @@ nav {
   }
 }
 
-@media (max-width: 1440px) {
-  nav {
-    .navField {
-      
-          width: 90%;
-        
-    }
-  }
-
-}
-
-
-
 @media screen and (max-width: 825px) {
   nav {
     .navField {
+      width: fit-content;
       justify-content: center;
 
       .searchField {
@@ -120,13 +110,16 @@ nav {
           left: 15%;
         }
         input {
+          border-radius:10px 0 0 10px;
           width: 90%;
         }
       }
-      
+
       .btn {
+        display: flex;
         visibility: visible;
-        margin-right: auto;
+        // right: 25%;
+        border-radius: 0 10px 10px 0;
       }
 
       .menu {
