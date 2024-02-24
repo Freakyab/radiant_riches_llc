@@ -1,0 +1,251 @@
+.card {
+  display: flex;
+  margin-top: 20px;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  line-height: 2.5;
+  .leftSection {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    height: 100%;
+
+    .tag {
+      display: flex;
+      position: relative;
+      top: -0.5rem;
+      justify-content: center;
+      align-items: center;
+      font-size: medium;
+      gap: 0.2rem;
+      font-weight: 100;
+      background: #ff7724;
+      width: 60%;
+      border-radius: 0 10px 10px 0;
+      color: #ffffff;
+    }
+
+    .rank {
+      position: relative;
+      //   top: 0.4rem;
+      left: -1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #e1e4e6;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+    .image {
+      padding: 1.5rem;
+      width: 200px;
+      height: 150px;
+    }
+    .imageLabel {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      font-size: small;
+      color: #626e79;
+    }
+  }
+
+  .centerSection {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 10px 0;
+    .title {
+      color: #4b5665;
+      font-size: 1rem;
+      .contextText {
+        font-weight: normal;
+      }
+    }
+
+    .off{
+      color: #074786;
+      font-size: 1rem;
+      background-color: #F2F4F7;
+      width: fit-content;
+      font-weight: 500;
+      padding: 0 5px;
+      border-radius: 10px;
+    }
+
+    .highlight {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .timeStamps {
+      background: #fff4ed;
+      border-radius: 12px;
+      font-size: small;
+      padding: 0.5rem;
+    }
+    .timeStamp {
+      padding: 10px;
+    }
+
+    .time {
+      color: #1b88f4;
+      padding: 10px;
+      background: white;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    .desc {
+      padding: 0.5rem;
+      font-size: small;
+    }
+
+    .checkBox{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+    }
+    .checkTitle {
+      font-size: 0.8rem;
+      padding-left: 0.2rem;
+    }
+
+    .showmore {
+      display: flex;
+      align-items: center;
+      color: #1b88f4;
+      cursor: pointer;
+    }
+  }
+
+  .rightSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.2rem 0 0;
+
+    .rating {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #f3f9ff;
+      border-radius: 0 0 10px 10px;
+      height: 120px;
+      width: 70%;
+
+      .ratingDetails {
+        color: #074786;
+        line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        padding: 0 0 10px 0;
+
+        .infoIcon {
+          width: 10px;
+          height: 10px;
+          position: relative;
+          top: 0;
+          left: 20px;
+          color: #babec3;
+        }
+        .ratingValue {
+          font-weight: 500;
+          padding: 0 0 5px 0;
+          font-size: 1.5rem;
+        }
+      }
+      .ratingStars {
+        display: flex;
+        justify-content: center;
+        .star {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+    .button {
+      width: 200px;
+      margin-right: 10px;
+      height: 40px;
+      border: none;
+      color: white;
+      background: #1b88f4;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+@media screen and (max-width:1024px){
+  .card {
+    flex-direction: column;
+    padding: 10px;
+    .leftSection {
+      width: 100%;
+      .tag {
+        width: 100%;
+      }
+      .rank {
+        left: 0;
+      }
+      .image {
+        margin-left: auto;
+        margin-right: auto;
+        // width: 100%;
+      }
+    }
+    .centerSection {
+      padding: 0 0 10px 0;
+      .title {
+        font-size: 1.2rem;
+      }
+      .off{
+        font-size: 1.2rem;
+      }
+      .highlight {
+        font-size: 1.2rem;
+      }
+      .timeStamps {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .desc {
+        font-size: 1rem;
+      }
+    }
+    .rightSection {
+      .rating {
+        height: 100px;
+        width: 100%;
+        
+        .ratingDetails {
+          margin-left: auto;
+          margin-right: auto;
+          width: 100px;
+          .ratingValue {
+            font-size: 1.2rem;
+          }
+        
+        }
+      }
+      .button {
+        width: 100%;
+      }
+    }
+  }
+  
+}
