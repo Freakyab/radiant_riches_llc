@@ -1,7 +1,8 @@
 "use client";
 
-import styles from "./signupComponent.module.scss";
+// Required Libraries and Components
 import React, { useState } from "react";
+import styles from "./signupComponent.module.scss";
 
 const SignupComponent = () => {
   const [email, setEmail] = useState("");

@@ -1,15 +1,17 @@
 "use client";
-import styles from "./card.module.scss";
-import CardDetails from "./cardDetails";
+// Required Libraries and Components
 import React from "react";
-import {CountUp}  from "use-count-up";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import { CiCircleInfo, CiTrophy } from "react-icons/ci";
 import { IoDiamondOutline } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { CountUp } from "use-count-up";
+import CardDetails from "./cardDetails";
+import styles from "./card.module.scss";
 import Image from "next/image";
 
 const Card = () => {
+  // Handle Submit
   const handleSumbit = () => {
     alert("Coming soon!");
   };
@@ -36,6 +38,7 @@ const Card = () => {
             exit={{ opacity: 0, y: 100 }}
             className={styles.card}
             key={index}>
+            {/* Card Left section details */}
             <div className={`${styles.leftSection}`}>
               {card.rank === 1 ? (
                 <span className={`${styles.tag} ${styles.shimmer}`}>
@@ -58,6 +61,8 @@ const Card = () => {
               />
               <p className={styles.imageLabel}>{card.imageLabel}</p>
             </div>
+
+            {/* Card Center section details */}
             <div className={styles.centerSection}>
               <h3 className={styles.title}>
                 {card.title}
@@ -79,7 +84,6 @@ const Card = () => {
                   })}
                 </div>
               ) : null}
-
               <p className={styles.desc}>{card.desc}</p>
               {card.checkBox
                 ? card.checkBox.map((check, index) => {
@@ -102,16 +106,14 @@ const Card = () => {
                 <RiArrowDropDownLine size={20} />
               </span>
             </div>
+
+            {/* Card Right section details */}
             <div className={styles.rightSection}>
               <div className={styles.rating}>
                 <span className={styles.ratingDetails}>
                   <CiCircleInfo className={styles.infoIcon} title="Info" />
                   <p className={styles.ratingValue}>
-                    <CountUp
-                      isCounting
-                      end={card.rating}
-                      duration={2.75}
-                      />
+                    <CountUp isCounting end={card.rating} duration={2.75} />
                   </p>
                   <p className={styles.ratingTitle}>{card.reviewTitle}</p>
                 </span>

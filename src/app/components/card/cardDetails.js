@@ -1,3 +1,4 @@
+// Contents: Card Details for the card component
 const cardDetails = [
   {
     title: "WixPro 72-Inch Responsive Website Builder - ",

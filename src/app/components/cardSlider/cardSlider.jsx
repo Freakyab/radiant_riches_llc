@@ -1,4 +1,6 @@
 "use client";
+
+// Required Libraries and Components
 import React from "react";
 import { motion } from "framer-motion";
 import CardDetails from "../cardSlider/cardDetails";
@@ -21,6 +23,8 @@ const cardSlider = () => {
       animate="visible"
       variants={fadeInVariants}>
       <h2>Related deals you might like for</h2>
+
+      {/*  Card Slider */}
       <div className={styles.cardSlider}>
         {CardDetails.map((card, index) => (
           <motion.div
@@ -38,6 +42,8 @@ const cardSlider = () => {
                 </span>
               ))}
             </div>
+
+            {/* Card Details */}
             <div className={styles.cardDetails}>
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p>{card.details}</p>
