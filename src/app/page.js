@@ -1,9 +1,7 @@
-'use client';
-import { useRouter } from "next/navigation";
+"use client";
+import { redirect } from "next/navigation";
 const Page = () => {
-  const router = useRouter();
-  router.push("/home/hostingtoall/hosting/hosting6/hosting5");
+  redirect("/home/hostingtoall/hosting/hosting6/hosting5");
 };
-
 
 export default Page;
