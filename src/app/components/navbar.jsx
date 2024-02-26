@@ -14,7 +14,9 @@ const Navbar = () => {
     <nav>
       <div className="navField">
         <span className="searchField">
-          <span className="searchFieldIcon">
+          <span className="searchFieldIcon"
+           onClick = {() => alert("Coming soon !!!")}
+          >
             <CiSearch size={24} />
           </span>
           <input

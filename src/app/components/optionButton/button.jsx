@@ -6,7 +6,9 @@ const OptionButton = () => {
     <div className={styles.category}>
       {options.map((option, index) => {
         return (
-          <button key={index} className={styles.btn}>
+          <button key={index} className={styles.btn}
+            onClick={() => alert("Coming soon !!!")}
+          >
             {option}
           </button>
         );

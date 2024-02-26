@@ -7,11 +7,15 @@
 
   .btn {
     background-color: #ffffff;
-    border: none;
-    height: 36px;
+    border: 1px solid #e1e4e6;
+    height: 37px;
     cursor: pointer;
     border-radius: 12px;
     width: 100px;
+  }
+  .btn:hover {
+    background-color: #f3f9ff;
+    box-shadow: 0 0 10px 0 #1b88f4;
   }
 }
 

@@ -10,9 +10,14 @@
     display: flex;
     width: fit-content;
     padding: 10px;
-    text-decoration: none;
     white-space: nowrap;
     color: #5c6874;
+  }
+
+  .link:hover{
+    color: #1b88f4;
+    text-decoration: underline;
+  
   }
 }
 

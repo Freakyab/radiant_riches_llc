@@ -5,22 +5,18 @@ import style from "./linkRouter.module.scss";
 
 const LinkRouter = () => {
   const [links, setLinks] = useState([
-    "Home",
-    "Hosting for all",
-    "Hosting",
-    "Hosting6",
-    "Hosting5",
+    {name : "Home",link : "/home"},
+    {name : "Hosting for all",link : "/home/hostingtoall"},
+    {name : "Hosting",link : "/home/hostingtoall/hosting"},
+    {name : "Hosting6",link : "/home/hostingtoall/hosting/hosting6"},
+    {name : "Hosting5",link : "/home/hostingtoall/hosting/hosting6/hosting5"},
   ]);
 
   return (
     <div className={style.links}>
       {links.map((link, index) => (
-        <Link
-          href={`/${link.toLowerCase()}`}
-          key={index}
-          className={style.link}>
-          {link}
-          {index < links.length - 1 ? " > " : null}
+        <Link key={index} href={link.link} style={{textDecoration: "none"}}>
+          <span className={style.link}>{link.name}{" >"}</span>
         </Link>
       ))}
     </div>
