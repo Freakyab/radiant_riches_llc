@@ -1,6 +1,6 @@
 "use client";
 // Required Libraries and Components
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiCircleCheck, CiCircleInfo } from "react-icons/ci";
 
 import Footer from "./../../../../../components/footer/footer";
@@ -14,6 +14,7 @@ import styles from "./../../../../../page.module.css";
 
 export default function Home() {
   const [selectedOption, setSelectedOption] = useState("Top Relevant");
+
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);

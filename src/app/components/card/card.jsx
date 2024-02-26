@@ -9,12 +9,22 @@ import { CountUp } from "use-count-up";
 import CardDetails from "./cardDetails";
 import styles from "./card.module.scss";
 import Image from "next/image";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Card = () => {
   // Handle Submit
   const handleSumbit = () => {
-    alert("Coming soon!");
+    toast.info("Coming soon!", {
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
+
 
   return (
     <LazyMotion features={domAnimation}>
@@ -141,6 +151,7 @@ const Card = () => {
           </m.div>
         );
       })}
+      <ToastContainer />
     </LazyMotion>
   );
 };

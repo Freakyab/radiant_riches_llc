@@ -2,6 +2,8 @@
 // Required Libraries and Components
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -11,12 +13,15 @@ const Navbar = () => {
     setShow(!show);
   };
 
+  const handleSubmit = () => {
+    toast("Coming soon!");
+  };
   return (
     <nav>
       <div className="navField">
         <span className="searchField">
           <span className="searchFieldIcon"
-           onClick = {() => alert("Coming soon !!!")}
+           onClick = {handleSubmit}
           >
             <CiSearch size={24} />
           </span>
@@ -36,6 +41,7 @@ const Navbar = () => {
           {show ? "Close" : "Menu"}
         </span>
       </div>
+      <ToastContainer />
     </nav>
   );
 };

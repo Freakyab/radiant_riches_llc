@@ -5,10 +5,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import CardDetails from "../cardSlider/cardDetails";
 import styles from "./cardSlider.module.scss";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const cardSlider = () => {
   const handleSumbit = () => {
-    alert("Coming soon!");
+    toast("Coming soon!");
   };
 
   const fadeInVariants = {
@@ -59,6 +61,7 @@ const cardSlider = () => {
           </motion.div>
         ))}
       </div>
+      <ToastContainer />
     </motion.div>
   );
 };
