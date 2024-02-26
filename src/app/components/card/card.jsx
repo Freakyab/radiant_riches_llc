@@ -2,7 +2,7 @@
 import styles from "./card.module.scss";
 import CardDetails from "./cardDetails";
 import React from "react";
-import CountUp from "react-countup";
+import {CountUp}  from "use-count-up";
 import { CiCircleInfo, CiTrophy } from "react-icons/ci";
 import { IoDiamondOutline } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -108,16 +108,10 @@ const Card = () => {
                   <CiCircleInfo className={styles.infoIcon} title="Info" />
                   <p className={styles.ratingValue}>
                     <CountUp
+                      isCounting
                       end={card.rating}
                       duration={2.75}
-                      separator=" "
-                      decimals={1}
-                      decimal="."
-                      >
-                      {({ countUpRef}) => (
-                          <span ref={countUpRef} />
-                      )}
-                    </CountUp>
+                      />
                   </p>
                   <p className={styles.ratingTitle}>{card.reviewTitle}</p>
                 </span>
