@@ -1,9 +1,12 @@
 "use client";
 import styles from "./card.module.scss";
 import CardDetails from "./cardDetails";
+import React from "react";
+import CountUp from "react-countup";
 import { CiCircleInfo, CiTrophy } from "react-icons/ci";
 import { IoDiamondOutline } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import Image from "next/image";
 
 const Card = () => {
@@ -12,18 +15,35 @@ const Card = () => {
   };
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       {CardDetails.map((card, index) => {
         return (
-          <div className={styles.card} key={index}>
-            <div className={styles.leftSection}>
+          <m.div
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.5,
+                delay: index * 0.1,
+              },
+            }}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.2)",
+              transition: { duration: 0.2 },
+            }}
+            initial={{ opacity: 0, y: 100 }}
+            exit={{ opacity: 0, y: 100 }}
+            className={styles.card}
+            key={index}>
+            <div className={`${styles.leftSection}`}>
               {card.rank === 1 ? (
-                <span className={styles.tag}>
+                <span className={`${styles.tag} ${styles.shimmer}`}>
                   <CiTrophy className={styles.trophyIcon} size={20} />
                   <span>Best Choice</span>
                 </span>
               ) : card.rank === 2 ? (
-                <span className={styles.tag}>
+                <span className={`${styles.tag} ${styles.shimmer}`}>
                   <IoDiamondOutline className={styles.trophyIcon} size={20} />
                   <span>Best Value</span>
                 </span>
@@ -86,7 +106,19 @@ const Card = () => {
               <div className={styles.rating}>
                 <span className={styles.ratingDetails}>
                   <CiCircleInfo className={styles.infoIcon} title="Info" />
-                  <p className={styles.ratingValue}>{card.rating}</p>
+                  <p className={styles.ratingValue}>
+                    <CountUp
+                      end={card.rating}
+                      duration={2.75}
+                      separator=" "
+                      decimals={1}
+                      decimal="."
+                      >
+                      {({ countUpRef}) => (
+                          <span ref={countUpRef} />
+                      )}
+                    </CountUp>
+                  </p>
                   <p className={styles.ratingTitle}>{card.reviewTitle}</p>
                 </span>
                 <div className={styles.ratingStars}>
@@ -110,10 +142,10 @@ const Card = () => {
                 View
               </button>
             </div>
-          </div>
+          </m.div>
         );
       })}
-    </>
+    </LazyMotion>
   );
 };
 
