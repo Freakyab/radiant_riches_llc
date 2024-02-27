@@ -14,6 +14,7 @@ import styles from "./../../../../../page.module.css";
 
 export default function Home() {
   const [selectedOption, setSelectedOption] = useState("Top Relevant");
+  const [search, setSearch] = useState("");
 
 
   const handleOptionChange = (event) => {
@@ -22,7 +23,10 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar 
+        search={search}
+        setSearch={setSearch}
+      />
       <div className={styles.main}>
         <div className={styles.details}>
           <h1 className={styles.header}>Best Website builders in the US</h1>
@@ -57,7 +61,10 @@ export default function Home() {
           <span className={styles.segment}></span>
           <OptionButton />
           <LinkRouter />
-          <Card />
+          <Card
+            search={search}
+            setSearch={setSearch}
+          />
           <CardSlider />
           <SignupComponent />
         </div>

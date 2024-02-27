@@ -12,7 +12,9 @@ import Image from "next/image";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Card = () => {
+const Card = ({search, setSearch}) => {
+
+
   // Handle Submit
   const handleSumbit = () => {
     toast.info("Coming soon!", {
@@ -25,10 +27,15 @@ const Card = () => {
     });
   };
 
+ const filteredCards = CardDetails.filter((card) =>
+    card.title && card.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+
 
   return (
     <LazyMotion features={domAnimation}>
-      {CardDetails.map((card, index) => {
+      {filteredCards.map((card, index) => {
         return (
           <m.div
             animate={{
@@ -61,7 +68,7 @@ const Card = () => {
                   <span>Best Value</span>
                 </span>
               ) : null}
-              <p className={styles.rank}>{card.rank}</p>
+              <p className={styles.rank}>{index+1}</p>
               <Image
                 src={card.image}
                 alt={card.title}

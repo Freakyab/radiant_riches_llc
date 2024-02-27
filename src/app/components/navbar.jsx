@@ -5,9 +5,8 @@ import { CiSearch } from "react-icons/ci";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Navbar = () => {
+const Navbar = ({ search, setSearch }) => {
   const [show, setShow] = useState(false);
-  const [search, setSearch] = useState("");
 
   const handleClick = () => {
     setShow(!show);
@@ -20,9 +19,7 @@ const Navbar = () => {
     <nav>
       <div className="navField">
         <span className="searchField">
-          <span className="searchFieldIcon"
-           onClick = {handleSubmit}
-          >
+          <span className="searchFieldIcon" onClick={handleSubmit}>
             <CiSearch size={24} />
           </span>
           <input
